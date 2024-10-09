@@ -41,6 +41,25 @@ public class FirstWindow extends Application {
     g.setLineWidth(2);
     g.strokeArc(175,300, 50,100, 90, 135, ArcType.OPEN);
 
+
+    double[] xs = { 100, 400, 300, 100 };
+    double[] ys = { 50, 350, 450, 0 };
+    g.strokePolygon(xs, ys, 3);
+
+    for(int x=0; x<400; x++) {
+      g.setStroke(Color.rgb(x * 255 / 400,0,0));
+      g.strokeLine(x,0, x,600);
+    }
+
+    for(int y=0; y<600; y+=50) {
+      for(int x=0; x<400; x+=50) {
+        g.setFill(Color.rgb(0, y * 255 / 600, x * 255 / 400));
+        g.fillOval(x,y, 50,50);
+      }
+    }
+
+
+
   }
   
 }
