@@ -52,9 +52,23 @@ public class Interact extends Application {
     AnimationTimer timer = new AnimationTimer() {
       double px = 100;
       double py = 100;
+      double vx = Math.random() * 10;
+      double vy = Math.random() * 10;
       public void handle(long t) {
+        g.setFill(Color.WHITE);
+        g.fillRect(0,0, 600,600);
+
+        g.setFill(Color.RED);
         g.fillOval(px,py, 100,100);
-        px += 1;
+        if(px > 500 || px < 0) {
+          vx = -vx;
+        }
+        if(py > 500 || py < 0) {
+          vy = -vy;
+        }
+
+        px += vx;
+        py += vy;
       }
     };
     timer.start();
