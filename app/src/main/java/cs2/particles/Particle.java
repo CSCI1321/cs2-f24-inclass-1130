@@ -13,8 +13,8 @@ public class Particle {
   public Particle(Vec2 p, Vec2 v) {
     this.pos = p;
     this.vel = v;
-    this.sz = 50;
-    this.col = Color.ORANGERED;
+    this.sz = 20;
+    this.col = Color.rgb(50,50,200, 0.4);
   }
 
   public void display(GraphicsContext g) {
@@ -24,6 +24,10 @@ public class Particle {
 
   public void update() {
     this.pos = this.pos.add(this.vel);
+  }
+
+  public void addForce(Vec2 f) {
+    this.vel.addThis(f);
   }
 
 
