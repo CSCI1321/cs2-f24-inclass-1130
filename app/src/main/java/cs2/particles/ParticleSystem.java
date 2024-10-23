@@ -16,8 +16,15 @@ public class ParticleSystem {
   }
 
   public void addParticle() {
-    System.out.println(this.parts.size());
-    this.parts.add(new Particle(this.origin.clone(), Vec2.random(5)));
+    this.parts.add(new ImageParticle(this.origin.clone(), Vec2.random(5)));
+    
+    /*
+    if(Math.random() < 0.5) {
+      this.parts.add(new SquareParticle(this.origin.clone(), Vec2.random(5)));
+    } else {
+      this.parts.add(new RoundParticle(this.origin.clone(), Vec2.random(5)));
+    }*/
+
   }
   public void display(GraphicsContext g) {
     for(int i=0; i<this.parts.size(); i++) {

@@ -4,11 +4,11 @@ import cs2.util.Vec2;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
-public class Particle {
-  private Vec2 pos;
-  private Vec2 vel;
-  private double sz;
-  private Color col;
+public abstract class Particle {
+  protected Vec2 pos;
+  protected Vec2 vel;
+  protected double sz;
+  protected Color col;
 
   public Particle(Vec2 p, Vec2 v) {
     this.pos = p;
@@ -17,10 +17,7 @@ public class Particle {
     this.col = Color.rgb(50,50,200, 0.4);
   }
 
-  public void display(GraphicsContext g) {
-    g.setFill(this.col);
-    g.fillOval(this.pos.getX(),this.pos.getY(), this.sz,this.sz);
-  }
+  public abstract void display(GraphicsContext g); 
 
   public void update() {
     this.pos = this.pos.add(this.vel);
