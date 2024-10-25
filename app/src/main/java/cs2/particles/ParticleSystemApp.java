@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 
 public class ParticleSystemApp extends Application {
+  public static final Image img = new Image("file:smoke.png");
   Vec2 wind = new Vec2();
   public void start(Stage primaryStage) {
     Canvas canvas = new Canvas(600, 600);
@@ -33,8 +34,6 @@ public class ParticleSystemApp extends Application {
       wind = new Vec2(e.getX() / 300 -1, 0);
     });
 
-    Image img = new Image("file:Star.png");
-
     AnimationTimer timer = new AnimationTimer() {
       public void handle(long t) {
         g.setFill(Color.WHITE);
@@ -46,8 +45,6 @@ public class ParticleSystemApp extends Application {
           ps.addForce(new Vec2(0,0.1));
           ps.addForce(wind);
         }
-
-        g.drawImage(img, 100,100);
       }
     };
     timer.start();

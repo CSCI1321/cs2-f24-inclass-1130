@@ -5,12 +5,13 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 
 public class ImageParticle extends Particle {
+  
   public ImageParticle (Vec2 p, Vec2 v) {
     super(p,v);
   }
 
   public void display(GraphicsContext g) {
-    Image img = new Image("file:Star.png");
-    g.drawImage(img, this.pos.getX(), this.pos.getY());
+    g.setGlobalAlpha(0.2);
+    g.drawImage(ParticleSystemApp.img, this.pos.getX(), this.pos.getY());
   }
 }

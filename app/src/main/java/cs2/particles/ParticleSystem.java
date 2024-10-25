@@ -16,8 +16,10 @@ public class ParticleSystem {
   }
 
   public void addParticle() {
-    this.parts.add(new ImageParticle(this.origin.clone(), Vec2.random(5)));
+    this.parts.add(0, new RainbowParticle(this.origin.clone(), Vec2.random(1)));
     
+    //this.parts.add(0, new ImageParticle(this.origin.clone(), Vec2.random(1)));
+
     /*
     if(Math.random() < 0.5) {
       this.parts.add(new SquareParticle(this.origin.clone(), Vec2.random(5)));
