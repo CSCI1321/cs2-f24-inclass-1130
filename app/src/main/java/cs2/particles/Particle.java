@@ -8,13 +8,13 @@ public abstract class Particle {
   protected Vec2 pos;
   protected Vec2 vel;
   protected double sz;
-  protected Color col;
+  protected ColorPattern cp;
 
   public Particle(Vec2 p, Vec2 v) {
     this.pos = p;
     this.vel = v;
     this.sz = 20;
-    this.col = Color.rgb(50,50,200, 0.4);
+    this.cp = new RainbowColor();//new SolidColor(Color.rgb(50,50,200, 0.4));
   }
 
   public abstract void display(GraphicsContext g); 
