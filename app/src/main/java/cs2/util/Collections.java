@@ -1,6 +1,7 @@
 package cs2.util;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 
@@ -59,6 +60,39 @@ public class Collections {
     while(it2.hasNext()) {
       System.out.println(it2.next());
     }
+
+    HashMap<Character, Double> map = new HashMap<>();
+    map.put('Z',3.141);
+    map.put('A', 2.5);
+    map.put('F', 3.001);
+
+    System.out.println(map);
+    map.put('S',-4.2);
+    System.out.println(map);
+
+    map.remove('F');
+    System.out.println(map);
+    map.remove('G');
+    System.out.println(map);
+
+    System.out.println(map.get('Z'));
+    System.out.println(map.get('G'));
+
+    System.out.println(map);
+    map.put('Z', 0.0);
+    System.out.println(map);
+
+    System.out.println(map.containsKey('F'));
+    System.out.println(map.containsValue(0.0));
+
+    System.out.println(map.keySet());
+    for(Character key : map.keySet()) {
+      Double value = map.get(key);
+      System.out.println(key + " -> " + value);
+    }
+
+
+
 
 
   }
