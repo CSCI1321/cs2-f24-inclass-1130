@@ -12,7 +12,15 @@ public class LinkedStack<T> implements Stack<T> {
   public void push(T elem) {
     head = new Node(elem, head);
   }
-  public T pop();
-  public T peek();
-  public boolean isEmpty();
+  public T pop() {
+    T tmp = head.data;
+    head = head.next;
+    return tmp;
+  }
+  public T peek() {
+    return head.data;
+  }
+  public boolean isEmpty() {
+    return head == null;
+  }
 }
